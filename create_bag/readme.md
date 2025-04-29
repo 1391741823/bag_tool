@@ -1,10 +1,16 @@
 #  将文件夹数据（图片）转换成bag包py代码（工作空间已经帮你创建好了）
-##  运行：
-###  在workspaces/src文件下：
+
+##  在workspaces/src文件下（编译部分）：
 catkin_make
 
-###  编译成功后运行：
-catkin_create_pkg create_bag std_msg rospy roscpp
+source devel/setup.bash
+
+##  编译成功后
+###  1、终端1运行：
+roscore
+
+###  2、终端2运行：
+rosrun create_bag node
 
 ### 代码说明：
 1、代码编译：catkin_make
@@ -13,3 +19,4 @@ catkin_create_pkg create_bag std_msg rospy roscpp
 
 ####  相关说明
 1、已修改相关Cmakelists.txt与torosbag.cpp文件需要修改的位置
+2、torosbag.cpp文件更新
