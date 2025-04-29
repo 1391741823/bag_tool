@@ -18,10 +18,10 @@ bool read_images(string path, vector<string> &image_files);
 int main(int argc, char **argv)
 {
     //输入文件和输出文件路径
-    string base_dir = "/media/ao/jiansheng/datasets/LIVO2_dataset/";
-    string img_dir = base_dir + "setic_image/";
+    string base_dir = "/media/ao/jiansheng/datasets/LIVO2_dataset/";//自己文件的路径
+    string img_dir = base_dir + "setic_image/";//文件夹名字
     std::cout<<"image path is"<<img_dir<<std::endl;
-    string output_bag=base_dir +"setic_image.bag";
+    string output_bag=base_dir +"setic_image.bag";//创建成bag包的名字
     string img_format = ".jpg";//格式
     vector<string> img_names;
     //GetFileNames(img_dir, img_names,".jpg");
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
         ros_image_msg->header.stamp = timestamp_ros;
         ros_image_msg->header.frame_id = "/image_raw";
  
-        bag.write("/camera/setic/image_raw", ros_image_msg->header.stamp, ros_image_msg);
+        bag.write("/camera/setic/image_raw", ros_image_msg->header.stamp, ros_image_msg);//topic的名字
         cout<<"write frame: "<<seq<<endl;
         seq++;
     }
