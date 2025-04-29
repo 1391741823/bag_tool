@@ -41,7 +41,7 @@ include_directories(
   ${OpenCV_INCLUDE_DIRS}
 )
  
-add_executable(node /media/ao/jiansheng/datasets/LIVO2_dataset/create_bag/src/create_bag/src/create_bag/torosbag.cpp)
+add_executable(node /media/ao/jiansheng/datasets/LIVO2_dataset/create_bag/src/create_bag/src/create_bag/torosbag.cpp)#修改为自己torosbag.cpp文件的位置
 target_link_libraries(node
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}
