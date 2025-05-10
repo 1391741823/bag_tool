@@ -11,7 +11,11 @@ python3 merge_bag.py -v total.bag Retail_street.bag setic_image.bag
 (将Retail_street.bag与setic_image.bag融合进total.bag中)
 
 ##  将2个bag里面某些topic合并到一个bag包里面
-python3 merge_bag.py -v --topic ' <topic_name1 topic_name2 topic_name3> ' <bagtarget.bag> <bagname1.bag> <bagname2.bag>
+python3 merge_bag.py -t --topic ' <topic_name1 topic_name2 topic_name3> ' <bagtarget.bag> <bagname1.bag> <bagname2.bag>
 
 ### 上面程序说明 
 将<bagname1.bag>中的topic_name1 topic_name2 与<bagname2.bag>中的 topic_name3融合进<bagtarget.bag>中
+
+# 更新
+
+5.10  上传merge_bag2.py 设置start与end的长度（你需要的时间戳开始时间与结束时间）
