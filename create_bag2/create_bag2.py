@@ -46,9 +46,10 @@ image_files.sort(key=lambda x: x[0])
 print(f"共找到 {len(image_files)} 张有效图像，开始处理...")
 
 min_timestamp = None
-max_timestamp = None
 
-# ...existing code...
+max_timestamp = None
+# 调整抖动范围为 ±1ms
+max_jitter_ns = 1_000_000  # ±1ms 抖动
 
 for i, (file_ts, filename) in enumerate(image_files):
     try:
@@ -56,6 +57,9 @@ for i, (file_ts, filename) in enumerate(image_files):
         # 文件时间戳单位为秒，转换为纳秒后加抖动
         jitter_ns = random.randint(-max_jitter_ns, max_jitter_ns)
         current_ts_ns = file_ts * 10**9 + jitter_ns  # 确保单位为纳秒
+        
+        # 四舍五入到秒级精度
+        current_ts_ns = round(current_ts_ns, -9)
         
         # 处理时间戳溢出
         secs = current_ts_ns // 10**9
